@@ -88,8 +88,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4674752062637730148}
-  m_Layer: 0
-  m_Name: UnbreakableBrick
+  m_Layer: 8
+  m_Name: Wallbrick
   m_TagString: Brick
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

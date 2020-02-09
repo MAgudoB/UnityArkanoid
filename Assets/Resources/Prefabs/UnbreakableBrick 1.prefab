@@ -89,7 +89,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4674752062637730148}
   - component: {fileID: -4467824247395539414}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: UnbreakableBrick 1
   m_TagString: Brick
   m_Icon: {fileID: 0}
