@@ -17,4 +17,4 @@ Para la realización de cada nivel (colocación de bloques) tardé aproximadamen
 La parte más costosa del ejercicio ha sido el ajuste del "bounce" o rebote de la pelota, ya que como se puede comprobar en el prototipo entregado, una vez se realizan varios rebotes, la fricción presupuesta no parece sufiente y la bola se acelera de más, dificultando el nivel. En esta parte pude pasar más de 4h. Además tampoco he podido corregir un error por el que la bola rebota en perpendicular y se queda moviéndose en horizontal.
 
 
-El resto de tareas, powerups, movimientos del jugador, lógica del juego, apenas llevaron entre media y una hora cada una de ellas.
+El resto de tareas, powerups (incluidos dos extra aparte de los dos requeridos), movimientos del jugador, lógica del juego, apenas llevaron entre media y una hora cada una de ellas.
