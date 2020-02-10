@@ -32,8 +32,17 @@ public class BallController : MonoBehaviour {
         //For this, we apply a force equals to the current speed plus max speed
         //rigidBody.AddForce(currentSpeed * ballSpeed);
         //Then we try to create an impulse based on its max speed.
+        Vector2 friction = calculateFriction(currentSpeed);
+        rigidBody.AddForce(friction);
         Vector2 speedVector = new Vector2(Mathf.Clamp(currentSpeed.x, -ballSpeed, ballSpeed), Mathf.Clamp(currentSpeed.y, -ballSpeed, ballSpeed));
         rigidBody.AddForce(Vector3.Reflect(speedVector, collision.contacts[0].normal).normalized * rigidBody.mass * ballSpeed, ForceMode2D.Impulse);
+    }
+
+    private Vector2 calculateFriction(Vector2 currentDirection) {
+        float dirX = -currentDirection.x;
+        float dirY = -currentDirection.y;
+
+        return new Vector2(dirX, dirY) * ballSpeed;
 
     }
 }
