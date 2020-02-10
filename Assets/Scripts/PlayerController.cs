@@ -12,16 +12,17 @@ public class PlayerController : MonoBehaviour {
     //Variable declaration
     public float playerLifes = 3;
     public float playerSpeed = 5f;
-    public int score = 0; 
+    public int score = 0;
     public float horizontalInput;
     public bool buffed = false;
+    public bool speedBuffed = false;
     private float timeBuffed;
     private Vector2 movement;
     private Rigidbody2D rigidBody;
     private GameObject ball;
     private GameObject brickWall;
     private Canvas canvas;
-    private bool gameStarted;    
+    private bool gameStarted;
 
     private void Start() {
         gameStarted = false;
@@ -58,13 +59,19 @@ public class PlayerController : MonoBehaviour {
                 ball.transform.position = new Vector3(0, -3.68f, 0);
                 gameStarted = false;
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-            }
-            if (buffed) {
-                timeBuffed += Time.deltaTime;
-                if (timeBuffed > 10) {
-                    gameObject.transform.localScale = new Vector3(1, 1, 1);
-                    timeBuffed = 0;
-                    buffed = false;
+                if (buffed || speedBuffed) {
+                    timeBuffed += Time.deltaTime;
+                    if (timeBuffed > 10) {
+                        if (speedBuffed) {
+                            playerSpeed = 5f;
+                            timeBuffed = 0;
+                            speedBuffed = false;
+                        } else {
+                            gameObject.transform.localScale = new Vector3(1, 1, 1);
+                            timeBuffed = 0;
+                            buffed = false;
+                        }
+                    }
                 }
             }
             if (playerLifes <= 0) {
@@ -72,7 +79,6 @@ public class PlayerController : MonoBehaviour {
                 Destroy(ball);
                 Destroy(this.gameObject);
             }
-            
         }
     }
 }
