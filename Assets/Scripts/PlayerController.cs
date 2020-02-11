@@ -42,6 +42,7 @@ public class PlayerController : MonoBehaviour {
     void FixedUpdate() {
         GameObject nLives = GameObject.FindGameObjectWithTag("GameController");
         nLives.GetComponent<Text>().text = playerLifes.ToString();
+        //If game hasn't started we can push the ball
         if (!gameStarted) {
             horizontalInput = Input.GetAxis("Horizontal");
             movement = new Vector2(horizontalInput * playerSpeed, 0);
@@ -54,12 +55,14 @@ public class PlayerController : MonoBehaviour {
         } else {
             horizontalInput = Input.GetAxis("Horizontal");
             rigidBody.velocity = new Vector2(horizontalInput * playerSpeed, 0);
+            //If brickWall has no child left, we can load the next level
             if (brickWall.gameObject.transform.childCount == 0) {
                 this.gameObject.transform.position = new Vector3(0, -4.08f, 0);
                 ball.transform.position = new Vector3(0, -3.68f, 0);
                 gameStarted = false;
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
             }
+            //If we are buffed in any way, we count up to 10 and then revert the changes
             if (buffed || speedBuffed) {
                 timeBuffed += Time.deltaTime;
                 if (timeBuffed > 10) {
@@ -75,6 +78,7 @@ public class PlayerController : MonoBehaviour {
                     }
                 }
             }
+            //If playerLifes becomes 0 or less we reset the game.
             if (playerLifes <= 0) {
                 SceneManager.LoadScene("Level1");
                 Destroy(ball);
