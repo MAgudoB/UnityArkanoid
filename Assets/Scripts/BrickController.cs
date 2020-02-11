@@ -4,16 +4,10 @@ using UnityEngine;
 
 public class BrickController : MonoBehaviour {
     public int brickLife = -1;
-
-
-    // Start is called before the first frame update
-    void Start() {
-
-    }
-
+    
     // Update is called once per frame
     void Update() {
-        if(brickLife == 0) {
+        if (brickLife == 0) {
             GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().score++;
             int rand = Random.Range(0, 10);
             if (rand > 8) {
@@ -25,6 +19,7 @@ public class BrickController : MonoBehaviour {
     }
 
     private void OnCollisionEnter2D(Collision2D collision) {
+        
         string tag = collision.gameObject.tag;
         if(tag == "Ball") {
             brickLife--;

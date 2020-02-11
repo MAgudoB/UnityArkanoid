@@ -18,3 +18,6 @@ La parte más costosa del ejercicio ha sido el ajuste del "bounce" o rebote de l
 
 
 El resto de tareas, powerups(añadidos dos extra), movimientos del jugador, lógica del juego, apenas llevaron entre media y una hora cada una de ellas.
+
+10/02/2020 - Añadidos dos nuevos power ups y corregida parte de la física (30mins).
+11/02/2020 - Añadidos sonidos y partículas (30min). Entregado.

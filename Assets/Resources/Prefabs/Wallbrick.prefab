@@ -90,7 +90,7 @@ GameObject:
   - component: {fileID: 4674752062637730148}
   m_Layer: 8
   m_Name: Wallbrick
-  m_TagString: Brick
+  m_TagString: BrickWall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

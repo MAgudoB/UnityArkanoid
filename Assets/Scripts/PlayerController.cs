@@ -59,18 +59,19 @@ public class PlayerController : MonoBehaviour {
                 ball.transform.position = new Vector3(0, -3.68f, 0);
                 gameStarted = false;
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-                if (buffed || speedBuffed) {
-                    timeBuffed += Time.deltaTime;
-                    if (timeBuffed > 10) {
-                        if (speedBuffed) {
-                            playerSpeed = 5f;
-                            timeBuffed = 0;
-                            speedBuffed = false;
-                        } else {
-                            gameObject.transform.localScale = new Vector3(1, 1, 1);
-                            timeBuffed = 0;
-                            buffed = false;
-                        }
+            }
+            if (buffed || speedBuffed) {
+                timeBuffed += Time.deltaTime;
+                if (timeBuffed > 10) {
+                    if (speedBuffed) {
+                        playerSpeed = 5f;
+                        timeBuffed = 0;
+                        gameObject.GetComponentInChildren<SpriteRenderer>().color = new Color(255, 255, 255);
+                        speedBuffed = false;
+                    } else {
+                        gameObject.transform.localScale = new Vector3(1, 1, 1);
+                        timeBuffed = 0;
+                        buffed = false;
                     }
                 }
             }
