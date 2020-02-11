@@ -1027,6 +1027,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7477622989038411212, guid: 0df188192137b9d4fa39caac4fdea657,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7600840806608507491, guid: 0df188192137b9d4fa39caac4fdea657,
         type: 3}
       propertyPath: m_Name
@@ -2014,6 +2019,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 36707242}
     m_Modifications:
+    - target: {fileID: -7935576344812145713, guid: 6d8e20735fe48824c9df00e90287c76e,
+        type: 3}
+      propertyPath: BypassEffects
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9054415036352527527, guid: 6d8e20735fe48824c9df00e90287c76e,
         type: 3}
       propertyPath: m_Name

@@ -10,10 +10,14 @@ public class BallController : MonoBehaviour {
     private Vector2 currentSpeed;
     private Rigidbody2D rigidBody;
     private GameObject playerPaddler;
+    private AudioSource ballHit;
+    private AudioSource brickHit;
 
     void Start() {
         rigidBody = GetComponent<Rigidbody2D>();
         playerPaddler = GameObject.FindGameObjectWithTag("Player");
+        ballHit = playerPaddler.GetComponent<AudioSource>();
+        brickHit = GameObject.FindGameObjectWithTag("Brick").GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -26,6 +30,12 @@ public class BallController : MonoBehaviour {
         //If I hit the GameOver area, player lifes gets reduced
         if (tag == "GameOver") {
             playerPaddler.GetComponent<PlayerController>().playerLifes--;
+        }
+        if (tag == "Player") {
+            ballHit.Play();
+        }
+        if (tag == "Brick") {
+            brickHit.Play();
         }
         //Now we have to apply force to the ball.
         //First, we should apply some friction so the forces don't just add up.
