@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/**
+    *Buff class to generate the powerUps
+**/
 public class Buff {
 
     private GameObject bombPrefab;
@@ -10,7 +13,11 @@ public class Buff {
     private GameObject gnomePrefab;
     private GameObject prefabSelected;
     
+    /**
+        *Constructor class
+    **/
     public Buff() {
+        //Get powerUps prefabs
         bombPrefab = Resources.Load("Prefabs/Bomb") as GameObject;
         starPrefab = Resources.Load("Prefabs/Star") as GameObject;
         speedPrefab = Resources.Load("Prefabs/Speed") as GameObject;
@@ -18,6 +25,7 @@ public class Buff {
     }
 
     public void generateBuff(GameObject brick) {
+        //Based upon a percentage, create one powerup or another
         int rand = UnityEngine.Random.Range(0, 12);
         if (rand > 3) {
             prefabSelected = bombPrefab;
