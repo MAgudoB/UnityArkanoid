@@ -8,6 +8,7 @@ public class SpeedPowerUp : Powers {
         if (collision.gameObject.tag == "Player") {
             collision.gameObject.GetComponent<PlayerController>().playerSpeed += 5f;
             collision.gameObject.GetComponent<PlayerController>().speedBuffed = true;
+            collision.gameObject.GetComponentInChildren<SpriteRenderer>().color = new Color(0,255,0);
             Destroy(this.gameObject);
         }
     }

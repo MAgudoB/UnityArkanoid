@@ -34,7 +34,7 @@ public class BallController : MonoBehaviour {
         if (tag == "Player") {
             ballHit.Play();
         }
-        if (tag == "Brick") {
+        if (tag == "Brick" && brickHit != null) {
             brickHit.Play();
         }
         //Now we have to apply force to the ball.
